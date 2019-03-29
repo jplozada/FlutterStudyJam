@@ -14,6 +14,42 @@ void main() {
   );
 }
 
+class CardLanzamiento extends StatelessWidget {
+  double paddingSize = 10.0;
+  String pathImage = "";
+
+  CardLanzamiento(this.pathImage);
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Container(
+        margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 130.0),
+        child: Stack(
+          children: <Widget>[
+            Container(
+            height: 120.0,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(pathImage),
+                    fit: BoxFit.cover
+                ),
+                borderRadius: BorderRadius.circular(20.0),
+                boxShadow: <BoxShadow>[
+                  BoxShadow(
+                      color: Colors.black54,
+                      blurRadius: 15.0,
+                      offset: Offset(0.0, 0.75)
+                  )
+                ]
+              )
+            )
+          ],
+        )
+    );
+  }
+}
+
 class HelloRectangle extends StatelessWidget {
   DateTime now = DateTime.now();
   @override
@@ -56,6 +92,7 @@ class HelloRectangle extends StatelessWidget {
                   ),
                 ),
               ),
+              CardLanzamiento("assets/images/supermariomaker2.jpg"),
             ],
           )
       );
