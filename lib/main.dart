@@ -15,14 +15,12 @@ void main() {
 }
 
 class HelloRectangle extends StatelessWidget {
-
   DateTime now = DateTime.now();
-
   @override
   Widget build(BuildContext context) {
     String dia = DateFormat("EEEEE").format(now);
     String mes = DateFormat("LLLL y").format(now);
-    return Container(margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 30.0),
+    return Container(margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
           child: Stack(
             children: <Widget>[
               Positioned(
@@ -44,6 +42,17 @@ class HelloRectangle extends StatelessWidget {
                       color: Colors.black,
                       fontSize: 26.0,
                       fontWeight: FontWeight.w500
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 80.0,
+                child: Text(
+                  "Lanzamientos",
+                  style: TextStyle(
+                      color: Colors.blueAccent,
+                      fontSize: 26.0,
+                      fontWeight: FontWeight.w400
                   ),
                 ),
               ),
