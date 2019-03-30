@@ -6,7 +6,12 @@ void main() {
     MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Noticias de videojuegos'),
+          backgroundColor: Colors.black,
+          title: Text('Noticias de videojuegos',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
         ),
         body: Videojuegos(),
       ),
@@ -182,6 +187,7 @@ class Videojuegos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Color(0xffE3E3E3),
       padding: EdgeInsets.only(left: 10.0, top: 10.0),
           child: Stack(
             children: <Widget>[
