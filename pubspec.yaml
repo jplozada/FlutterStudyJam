@@ -45,6 +45,10 @@ flutter:
   assets:
      - assets/images/supermariomaker2.jpg
      - assets/images/wowlogo.png
+     - assets/images/lollogo.png
+     - assets/images/starcraft2logo.png
+     - assets/images/godofwarlogo.png
+     - assets/images/battlefield1logo.png
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
 

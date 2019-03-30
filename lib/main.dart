@@ -6,9 +6,9 @@ void main() {
     MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Hello Rectangle'),
+          title: Text('Noticias de videojuegos'),
         ),
-        body: HelloRectangle(),
+        body: Videojuegos(),
       ),
     ),
   );
@@ -47,9 +47,9 @@ class CardLanzamiento extends StatelessWidget {
 }
 class CardActualizaciones extends StatelessWidget {
   String ActualizacionesImage = "";
-  String ActualziacionesText = "";
+  String ActualziacionesTitle = "";
   String ActualziacionesDesc = "";
-  CardActualizaciones(this.ActualizacionesImage, this.ActualziacionesText, this.ActualziacionesDesc);
+  CardActualizaciones(this.ActualizacionesImage, this.ActualziacionesTitle, this.ActualziacionesDesc);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -62,7 +62,7 @@ class CardActualizaciones extends StatelessWidget {
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage(ActualizacionesImage),
-                          fit: BoxFit.cover
+                          fit: BoxFit.fitWidth
                       ),
                       borderRadius: BorderRadius.only(
                           topLeft: const Radius.circular(20.0),
@@ -71,10 +71,10 @@ class CardActualizaciones extends StatelessWidget {
                   )
             ),
             Positioned(
-              top: 10.0,
-              left: 115.0,
+              top: 20.0,
+              left: 120.0,
                 child: Text(
-                  ActualziacionesText,
+                  ActualziacionesTitle,
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 17.0,
@@ -83,8 +83,8 @@ class CardActualizaciones extends StatelessWidget {
                 )
             ),
             Positioned(
-                top: 40.0,
-                left: 115.0,
+                top: 50.0,
+                left: 120.0,
                 child: Text(
                   ActualziacionesDesc,
                   style: TextStyle(
@@ -98,7 +98,7 @@ class CardActualizaciones extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           border: new Border.all(color: Colors.black),
-          color: Colors.lightBlueAccent,
+          color: Color(0xffC4E1F5),
           borderRadius: BorderRadius.circular(20.0),
           boxShadow: <BoxShadow>[
             BoxShadow(
@@ -159,19 +159,8 @@ class ListCardActualizaciones extends StatelessWidget {
         ),
         Container(
             padding: EdgeInsets.only(top: 10.0),
-            child: Text(
-              "Ver mas...",
-              style: TextStyle(
-                  color: Colors.lightBlueAccent,
-                  fontSize: 14.0,
-                  fontWeight: FontWeight.w300
-              ),
-            ),
-        ),
-        Container(
-            padding: EdgeInsets.only(top: 10.0),
             child:Text(
-              "Actualizaciones",
+              "Lo nuevo",
               style: TextStyle(
                   color: Colors.blueAccent,
                   fontSize: 26.0,
@@ -179,17 +168,17 @@ class ListCardActualizaciones extends StatelessWidget {
               ),
             ),
         ),
-        CardActualizaciones("assets/images/supermariomaker2.jpg","",""),
-        CardActualizaciones("assets/images/supermariomaker2.jpg","",""),
-        CardActualizaciones("assets/images/supermariomaker2.jpg","",""),
-        CardActualizaciones("assets/images/supermariomaker2.jpg","",""),
-        CardActualizaciones("assets/images/supermariomaker2.jpg","",""),
+        CardActualizaciones("assets/images/wowlogo.png","World of Warcraft","Novedades del Parche 8.1.5"),
+        CardActualizaciones("assets/images/battlefield1logo.png","Battlefield 1","Nuevos mapas"),
+        CardActualizaciones("assets/images/lollogo.png","League of Legends","Nuevo campeon pronto!"),
+        CardActualizaciones("assets/images/starcraft2logo.png","Starcraft 2","Campeonato a solo 3 meses"),
+        CardActualizaciones("assets/images/godofwarlogo.png","God of War","Exito de la PS4"),
       ],
     );
   }
 }
 
-class HelloRectangle extends StatelessWidget {
+class Videojuegos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
