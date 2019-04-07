@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
+import 'package:flutter_studyjam/widgets/text.dart';
 void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,
-          title: Text('Noticias de videojuegos',
-            style: TextStyle(
-              color: Colors.white,
-            ),
-          ),
+          title: WidgetText("Noticias sobre videojuegos", Colors.white, 16.0, 0.0, 0.0, 0.0, 0.0),
         ),
         body: Videojuegos(),
       ),
     ),
   );
 }
-
 class CardLanzamiento extends StatelessWidget {
   String LanzamientoImage = "";
   CardLanzamiento(this.LanzamientoImage);
@@ -116,7 +111,6 @@ class CardActualizaciones extends StatelessWidget {
     );
   }
 }
-
 class ListCardActualizaciones extends StatelessWidget {
   DateTime now = DateTime.now();
   @override
@@ -136,42 +130,15 @@ class ListCardActualizaciones extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-            padding: EdgeInsets.only(top: 10.0),
-            child:Text(
-              "Novedades",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 26.0,
-                  fontWeight: FontWeight.w500
-              ),
-            ),
-        ),
-        Container(
-            padding: EdgeInsets.only(top: 10.0),
-            child:Text(
-              "Lanzamientos",
-              style: TextStyle(
-                  color: Colors.blueAccent,
-                  fontSize: 26.0,
-                  fontWeight: FontWeight.w400
-              ),
-            ),
-        ),
+        WidgetText("Novedades", Colors.black, 26.0, 0.0, 0.0, 10.0, 0.0),
+        WidgetText("Lanzamientos", Colors.blue, 26.0, 0.0, 0.0, 10.0, 0.0),
         Container(
             padding: EdgeInsets.only(top: 10.0),
             child:CardLanzamiento("assets/images/supermariomaker2.jpg")
         ),
         Container(
             padding: EdgeInsets.only(top: 10.0),
-            child:Text(
-              "Lo nuevo",
-              style: TextStyle(
-                  color: Colors.blueAccent,
-                  fontSize: 26.0,
-                  fontWeight: FontWeight.w400
-              ),
-            ),
+            child: WidgetText("Lo nuevo", Colors.lightBlue, 26.0, 0.0, 0.0, 10.0, 0.0),
         ),
         CardActualizaciones("assets/images/wowlogo.png","World of Warcraft","Novedades del Parche 8.1.5"),
         CardActualizaciones("assets/images/battlefield1logo.png","Battlefield 1","Nuevos mapas"),
@@ -182,7 +149,6 @@ class ListCardActualizaciones extends StatelessWidget {
     );
   }
 }
-
 class Videojuegos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
