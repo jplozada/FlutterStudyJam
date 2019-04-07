@@ -7,98 +7,48 @@ void main() {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,
-          title: WidgetText("Noticias sobre videojuegos", Colors.white, 16.0, 0.0, 0.0, 0.0, 0.0),
+          title: WidgetText("Videogames News", Colors.white, 16.0, 0.0, 0.0),
         ),
-        body: Videojuegos(),
+        body: VideoG(),
       ),
     ),
   );
 }
-class CardLanzamiento extends StatelessWidget {
-  String LanzamientoImage = "";
-  CardLanzamiento(this.LanzamientoImage);
+class CardGames extends StatelessWidget {
+  String vImg = "";
+  String vtitle = "";
+  String vDesc = "";
+  CardGames(this.vImg, this.vtitle, this.vDesc);
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.only(left: 10.0, right: 20.0, top: 20.0),
+      height: 150.0,
+        margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
         child: Stack(
           children: <Widget>[
             Container(
-            height: 120.0,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(LanzamientoImage),
-                    fit: BoxFit.cover
-                ),
-                borderRadius: BorderRadius.circular(20.0),
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                      color: Colors.black38,
-                      blurRadius: 15.0,
-                      offset: Offset(0.0, 1.0)
-                  )
-                ]
-              )
-            )
-          ],
-        )
-    );
-  }
-}
-class CardActualizaciones extends StatelessWidget {
-  String ActualizacionesImage = "";
-  String ActualziacionesTitle = "";
-  String ActualziacionesDesc = "";
-  CardActualizaciones(this.ActualizacionesImage, this.ActualziacionesTitle, this.ActualziacionesDesc);
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        margin: EdgeInsets.only(left: 10.0, right: 20.0, top: 20.0),
-        child: Stack(
-          children: <Widget>[
-            Container(
-                  height: 110.0,
-                  width: 110.0,
+                margin: EdgeInsets.only(left: 60.0, right: 60.0, top: 10.0, bottom: 0.0),
+                  height: 80.0,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage(ActualizacionesImage),
-                          fit: BoxFit.fitWidth
-                      ),
-                      borderRadius: BorderRadius.only(
-                          topLeft: const Radius.circular(20.0),
-                          bottomLeft: const Radius.circular(20.0)
+                          image: AssetImage(vImg),
+                          fit: BoxFit.cover
                       ),
                   )
             ),
-            Positioned(
-              top: 20.0,
-              left: 120.0,
-                child: Text(
-                  ActualziacionesTitle,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 17.0,
-                      fontWeight: FontWeight.w500
-                  ),
-                )
+            Container(
+              child: Stack(
+                children: <Widget>[
+                  WidgetText(this.vtitle, Colors.black87, 17, 20.0, 100.0),
+                  WidgetText(this.vDesc, Colors.black45, 15, 20.0, 120.0),
+                ],
+              ),
             ),
-            Positioned(
-                top: 50.0,
-                left: 120.0,
-                child: Text(
-                  ActualziacionesDesc,
-                  style: TextStyle(
-                      color: Colors.black54,
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.w500
-                  ),
-                )
-            )
           ],
         ),
         decoration: BoxDecoration(
           border: new Border.all(color: Colors.black),
-          color: Color(0xffC4E1F5),
+          color: Colors.white,
           borderRadius: BorderRadius.circular(20.0),
           boxShadow: <BoxShadow>[
             BoxShadow(
@@ -111,55 +61,32 @@ class CardActualizaciones extends StatelessWidget {
     );
   }
 }
-class ListCardActualizaciones extends StatelessWidget {
+class VideoG extends StatelessWidget {
   DateTime now = DateTime.now();
   @override
   Widget build(BuildContext context) {
     String dia = DateFormat("EEEEE").format(now);
     String mes = DateFormat("LLLL y").format(now);
-    return ListView(
-      children: <Widget>[
-        Container(
-          padding: EdgeInsets.only(top: 10.0),
-          child: Text(
-            '$dia, $mes',
-            style: TextStyle(
-                color: Colors.grey,
-                fontSize: 16.0,
-                fontWeight: FontWeight.w400
-            ),
-          ),
-        ),
-        WidgetText("Novedades", Colors.black, 26.0, 0.0, 0.0, 10.0, 0.0),
-        WidgetText("Lanzamientos", Colors.blue, 26.0, 0.0, 0.0, 10.0, 0.0),
-        Container(
-            padding: EdgeInsets.only(top: 10.0),
-            child:CardLanzamiento("assets/images/supermariomaker2.jpg")
-        ),
-        Container(
-            padding: EdgeInsets.only(top: 10.0),
-            child: WidgetText("Lo nuevo", Colors.lightBlue, 26.0, 0.0, 0.0, 10.0, 0.0),
-        ),
-        CardActualizaciones("assets/images/wowlogo.png","World of Warcraft","Novedades del Parche 8.1.5"),
-        CardActualizaciones("assets/images/battlefield1logo.png","Battlefield 1","Nuevos mapas"),
-        CardActualizaciones("assets/images/lollogo.png","League of Legends","Nuevo campeon pronto!"),
-        CardActualizaciones("assets/images/starcraft2logo.png","Starcraft 2","Campeonato a solo 3 meses"),
-        CardActualizaciones("assets/images/godofwarlogo.png","God of War","Exito de la PS4"),
-      ],
-    );
-  }
-}
-class Videojuegos extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
     return Container(
-      color: Color(0xffE3E3E3),
-      padding: EdgeInsets.only(left: 10.0, top: 10.0),
-          child: Stack(
+      color: Color(0xffbdbdbd),
+      padding: EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10.0),
+      child: Stack(
+        children: <Widget>[
+            ListView(
             children: <Widget>[
-              ListCardActualizaciones(),
+            WidgetText('$dia, $mes', Color(0xff000000), 16, 200.0, 5.0),
+            WidgetText("News", Color(0xffd32f2f), 30.0, 0.0, 5.0),
+            WidgetText("Releases", Color(0xff01579b), 26.0, 5.0, 5.0),
+            CardGames("assets/images/smm2.png","Super Mario Maker 2","June 2019"),
+            WidgetText("Updates", Color(0xff01579b), 26.0, 5.0, 10.0),
+            CardGames("assets/images/wow.png","World of Warcraft","Update 8.1.5"),
+            CardGames("assets/images/bf1.png","Battlefield 1","News maps"),
+            CardGames("assets/images/lol.png","League of Legends","New Champion!"),
+            CardGames("assets/images/sc2.png","Starcraft 2","Tournament soon.."),
             ],
           ),
-      );
+        ],
+      ),
+    );
   }
 }
