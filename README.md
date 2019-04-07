@@ -1,3 +1,5 @@
+App to see any kind of news about video games.
+
 # flutter_studyjam
 
 A new Flutter application.
