@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 class WidgetText extends StatelessWidget {
-  String vtitle = "";
+  String vtitle;
   Color vColor;
   double vSize = 16;
   double vTopMar = 0.0;

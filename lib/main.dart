@@ -11,9 +11,9 @@ void main() {
   );
 }
 class CardGames extends StatelessWidget {
-  String vImg = "";
-  String vtitle = "";
-  String vDesc = "";
+  String vImg;
+  String vtitle;
+  String vDesc;
   CardGames(this.vImg, this.vtitle, this.vDesc);
   @override
   Widget build(BuildContext context) {
@@ -23,14 +23,22 @@ class CardGames extends StatelessWidget {
         child: Stack(
           children: <Widget>[
             Container(
-                margin: EdgeInsets.only(left: 60.0, right: 60.0, top: 10.0, bottom: 0.0),
-                  height: 80.0,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage(vImg),
-                          fit: BoxFit.cover
+              child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.only(left: 60.0, right: 60.0, top: 10.0, bottom: 0.0),
+              height: 80.0,
+              width: 200.0,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(vImg),
+                  fit: BoxFit.cover
                       ),
-                  )
+                    )
+                  ),
+                ],
+              )
             ),
             Container(
               child: Stack(
@@ -48,9 +56,8 @@ class CardGames extends StatelessWidget {
           borderRadius: BorderRadius.circular(20.0),
           boxShadow: <BoxShadow>[
             BoxShadow(
-              color: Colors.black54,
-              blurRadius: 15.0,
-              offset: Offset(0.0, 0.75)
+              color: Colors.white54,
+              blurRadius: 10.0,
             )
           ]
          )
