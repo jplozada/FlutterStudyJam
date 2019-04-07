@@ -5,10 +5,6 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          title: WidgetText("Videogames News", Colors.white, 16.0, 0.0, 0.0),
-        ),
         body: VideoG(),
       ),
     ),
@@ -48,7 +44,7 @@ class CardGames extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           border: new Border.all(color: Colors.black),
-          color: Colors.white,
+          color: Color(0xffe0e0e0),
           borderRadius: BorderRadius.circular(20.0),
           boxShadow: <BoxShadow>[
             BoxShadow(
@@ -68,17 +64,17 @@ class VideoG extends StatelessWidget {
     String dia = DateFormat("EEEEE").format(now);
     String mes = DateFormat("LLLL y").format(now);
     return Container(
-      color: Color(0xffbdbdbd),
+      color: Colors.black,
       padding: EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10.0),
       child: Stack(
         children: <Widget>[
             ListView(
             children: <Widget>[
-            WidgetText('$dia, $mes', Color(0xff000000), 16, 200.0, 5.0),
-            WidgetText("News", Color(0xffd32f2f), 30.0, 0.0, 5.0),
-            WidgetText("Releases", Color(0xff01579b), 26.0, 5.0, 5.0),
+            WidgetText('$dia, $mes', Color(0xffb3e5fc), 16, 210.0, 5.0),
+            WidgetText("News", Color(0xff29b6f6), 30.0, 125.0, 5.0),
+            WidgetText("Releases", Color(0xffb3e5fc), 26.0, 0.0, 5.0),
             CardGames("assets/images/smm2.png","Super Mario Maker 2","June 2019"),
-            WidgetText("Updates", Color(0xff01579b), 26.0, 5.0, 10.0),
+            WidgetText("Updates", Color(0xffb3e5fc), 26.0, 0.0, 10.0),
             CardGames("assets/images/wow.png","World of Warcraft","Update 8.1.5"),
             CardGames("assets/images/bf1.png","Battlefield 1","News maps"),
             CardGames("assets/images/lol.png","League of Legends","New Champion!"),
