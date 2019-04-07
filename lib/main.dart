@@ -24,16 +24,16 @@ class CardGames extends StatelessWidget {
           children: <Widget>[
             Container(
               child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.only(left: 60.0, right: 60.0, top: 10.0, bottom: 0.0),
-              height: 80.0,
-              width: 200.0,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(vImg),
-                  fit: BoxFit.cover
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(left: 60.0, right: 60.0, top: 10.0, bottom: 0.0),
+                    height: 80.0,
+                    width: 200.0,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(vImg),
+                        fit: BoxFit.contain
                       ),
                     )
                   ),
@@ -43,8 +43,8 @@ class CardGames extends StatelessWidget {
             Container(
               child: Stack(
                 children: <Widget>[
-                  WidgetText(this.vtitle, Colors.black87, 17, 20.0, 100.0),
-                  WidgetText(this.vDesc, Colors.black45, 15, 20.0, 120.0),
+                  WidgetText(this.vtitle, Colors.black87, 17, 20.0, 95.0),
+                  WidgetText(this.vDesc, Colors.black45, 15, 20.0, 115.0),
                 ],
               ),
             ),
@@ -80,7 +80,17 @@ class VideoG extends StatelessWidget {
             WidgetText('$dia, $mes', Color(0xffb3e5fc), 16, 210.0, 5.0),
             WidgetText("News", Color(0xff29b6f6), 30.0, 125.0, 5.0),
             WidgetText("Releases", Color(0xffb3e5fc), 26.0, 0.0, 5.0),
-            CardGames("assets/images/smm2.png","Super Mario Maker 2","June 2019"),
+            Container(
+              height: 150.0,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  CardGames("assets/images/smm2.png","Super Mario Maker 2","June 2019"),
+                  CardGames("assets/images/crash.png","Crash Team Racing Nitro Fueled","June 2019"),
+                  CardGames("assets/images/doom.png","Doom Eternal","December 2019"),
+                ],
+              ),
+            ),
             WidgetText("Updates", Color(0xffb3e5fc), 26.0, 0.0, 10.0),
             CardGames("assets/images/wow.png","World of Warcraft","Update 8.1.5"),
             CardGames("assets/images/bf1.png","Battlefield 1","News maps"),

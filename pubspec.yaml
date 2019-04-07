@@ -48,6 +48,8 @@ flutter:
      - assets/images/lol.png
      - assets/images/sc2.png
      - assets/images/bf1.png
+     - assets/images/crash.png
+     - assets/images/doom.png
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
 
