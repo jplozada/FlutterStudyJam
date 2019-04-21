@@ -13,6 +13,7 @@ class WidgetText extends StatelessWidget {
       child: Text(
         vtitle,
         textDirection: TextDirection.ltr,
+        softWrap: true,
         style: TextStyle(
             color: vColor,
             fontSize: vSize,

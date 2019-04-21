@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_studyjam/widgets/text.dart';
+import 'package:flutter_studyjam/widgets/card.dart';
 
 Widget WidgetTabs() {
   return Container(
@@ -57,13 +57,8 @@ Widget WidgetTabs() {
         body: TabBarView(
           children: <Widget>[
            Container(
-             child: Center(
-               child: Text(
-                 "Releases",
-                 textAlign: TextAlign.center,
-                 style: TextStyle(fontSize: 15),
-               ),
-             ),
+             color: Colors.black,
+             child: WidgetCard()
             ),
             Container(
               child: Center(

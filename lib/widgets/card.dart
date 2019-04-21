@@ -1,69 +1,65 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_studyjam/widgets/text.dart';
-class WidgetCard extends StatelessWidget {
-  String vImg;
-  String vtitle;
-  String vDesc;
-  WidgetCard(this.vImg, this.vtitle, this.vDesc);
+
+Widget WidgetCard() {
+
+  return Container(
+    padding: EdgeInsets.symmetric(vertical: 30),
+    child: ReleasesList(),
+  );
+}
+
+class ReleasesList extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-        height: 150.0,
-        margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
-        child: Stack(
-          children: <Widget>[
-            Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Container(
-                        margin: EdgeInsets.only(left: 60.0, right: 60.0, top: 10.0, bottom: 0.0),
-                        height: 80.0,
-                        width: 200.0,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage(vImg),
-                              fit: BoxFit.contain
-                          ),
-                        )
-                    ),
-                  ],
+    return Row(
+      children: <Widget>[
+        GestureDetector(
+          child: Container(
+            height: 400.0,
+            padding: EdgeInsets.symmetric(vertical: 35, horizontal: 20),
+            width: 225,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(40),
+              boxShadow: [
+                new BoxShadow(
+                    color: Colors.white,
+                    offset: new Offset(0.0, 0.0),
+                    blurRadius: 8.0,
+                    spreadRadius: 0.0
                 )
+              ],
             ),
-            Container(
-              child: Stack(
-                children: <Widget>[
-                  WidgetText(this.vtitle, Colors.black87, 17, 20.0, 95.0),
-                  WidgetText(this.vDesc, Colors.black45, 15, 20.0, 115.0),
-                ],
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                SizedBox(
+                  height: 150,
+                  child: Image.asset("assets/images/wow.png"),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 0.0),
+                  child: WidgetText("World of warcraft", Colors.black, 25.0, 0.0, 0.0),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 10.0),
+                  child: WidgetText("Nuevos campos de batalla !!", Colors.black54, 15.0, 0.0, 0.0)
+                ),
+              ],
             ),
-            Positioned(
-                bottom: 10.0,
-                right: 10.0,
-                child:Icon(
-                    Icons.arrow_right
-                )
-            ),
-            Positioned(
-                top: 10.0,
-                right: 10.0,
-                child:Icon(
-                    Icons.bookmark
-                )
-            ),
-          ],
+          ),
         ),
-        decoration: BoxDecoration(
-            color: Color(0xffe0e0e0),
-            borderRadius: BorderRadius.circular(20.0),
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                color: Colors.white54,
-                blurRadius: 15.0,
-              )
-            ]
+        SizedBox(
+          width: 40,
         )
+      ],
     );
   }
 }
+
+
