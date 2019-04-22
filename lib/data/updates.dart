@@ -23,7 +23,7 @@ UpdatesList updatesList = UpdatesList(updates: [
     image: "assets/images/bf1.png",
     name: "Battlefield 1",
     desc:
-    "Nuevo DLC next month",
+    "New weapons and maps !",
   ),
 ]);
 

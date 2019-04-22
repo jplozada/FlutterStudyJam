@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_studyjam/widgets/card.dart';
+import 'package:flutter_studyjam/widgets/cardupdates.dart';
+import 'package:flutter_studyjam/widgets/cardreleases.dart';
 
 Widget WidgetTabs() {
   return Container(
@@ -58,11 +59,11 @@ Widget WidgetTabs() {
           children: <Widget>[
            Container(
              color: Colors.black,
-             child: WidgetCard()
+             child: WidgetCardRelease()
             ),
            Container(
                color: Colors.black,
-               child: WidgetCard1()
+               child: WidgetCardUpdate()
            ),
            Container(
              child: Center(

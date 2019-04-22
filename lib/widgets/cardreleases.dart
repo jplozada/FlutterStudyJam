@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_studyjam/data/releases.dart';
 import 'package:flutter_studyjam/widgets/text.dart';
-import 'package:flutter_studyjam/data/updates.dart';
+import 'package:flutter_studyjam/data/releases.dart';
 
-Widget WidgetCard() {
+Widget WidgetCardRelease() {
 
   return Container(
     padding: EdgeInsets.symmetric(vertical: 30),
@@ -22,45 +21,24 @@ Widget WidgetCard() {
   );
 }
 
-
-Widget WidgetCard1() {
-
-  return Container(
-    padding: EdgeInsets.symmetric(vertical: 30),
-    child: ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemCount: updatesList.updates.length,
-      itemBuilder: (BuildContext context, int i) {
-        return NewsList(
-          name: updatesList.updates[i].name,
-          image: updatesList.updates[i].image,
-          desc: updatesList.updates[i].desc,
-          updatesObject: updatesList.updates[i],
-        );
-      },
-    ),
-  );
-}
-
-
 class NewsList extends StatelessWidget {
   const NewsList(
       { @required this.name,
         @required this.image,
         @required this.desc,
-        this.releasesObject,
-        this.updatesObject});
+        this.releasesObject,});
 
   final String name;
   final String image;
   final String desc;
   final Release releasesObject;
-  final Update updatesObject;
+
   @override
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
         GestureDetector(
+
           child: Container(
             height: 450.0,
             padding: EdgeInsets.symmetric(vertical: 25, horizontal: 20),
@@ -102,8 +80,8 @@ class NewsList extends StatelessWidget {
                   child: WidgetText(name, Colors.black, 25.0, 0.0, 0.0),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 10.0),
-                  child: WidgetText(desc, Colors.black54, 15.0, 0.0, 0.0)
+                    margin: EdgeInsets.only(top: 10.0),
+                    child: WidgetText(desc, Colors.black54, 15.0, 0.0, 0.0)
                 ),
               ],
             ),
