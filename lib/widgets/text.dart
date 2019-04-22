@@ -17,7 +17,7 @@ class WidgetText extends StatelessWidget {
         style: TextStyle(
             color: vColor,
             fontSize: vSize,
-            fontWeight: FontWeight.w400
+            fontWeight: FontWeight.w400,
         ),
       ),
     );

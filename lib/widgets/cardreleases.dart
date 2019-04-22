@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_studyjam/widgets/text.dart';
 import 'package:flutter_studyjam/data/releases.dart';
+import 'package:flutter_studyjam/widgets/detailreleases.dart';
 
 Widget WidgetCardRelease() {
 
@@ -38,7 +39,10 @@ class NewsList extends StatelessWidget {
     return Row(
       children: <Widget>[
         GestureDetector(
-
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Details(releasesObject)));
+          },
           child: Container(
             height: 450.0,
             padding: EdgeInsets.symmetric(vertical: 25, horizontal: 20),
@@ -67,6 +71,9 @@ class NewsList extends StatelessWidget {
                         foreground: Colors.black54,
                       )
                     ]
+                ),
+                SizedBox(
+                  height: 30,
                 ),
                 SizedBox(
                   height: 150,

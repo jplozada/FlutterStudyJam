@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_studyjam/widgets/text.dart';
 import 'package:flutter_studyjam/data/updates.dart';
+import 'package:flutter_studyjam/widgets/detailupdates.dart';
 
 Widget WidgetCardUpdate() {
 
@@ -27,11 +28,13 @@ class NewsList extends StatelessWidget {
       { @required this.name,
         @required this.image,
         @required this.desc,
+        @required this.info,
         this.updatesObject});
 
   final String name;
   final String image;
   final String desc;
+  final String info;
   final Update updatesObject;
 
   @override
@@ -39,7 +42,10 @@ class NewsList extends StatelessWidget {
     return Row(
       children: <Widget>[
         GestureDetector(
-
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Details(updatesObject)));
+          },
           child: Container(
             height: 450.0,
             padding: EdgeInsets.symmetric(vertical: 25, horizontal: 20),
@@ -68,6 +74,9 @@ class NewsList extends StatelessWidget {
                         foreground: Colors.black54,
                       )
                     ]
+                ),
+                SizedBox(
+                  height: 30,
                 ),
                 SizedBox(
                   height: 150,
