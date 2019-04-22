@@ -60,15 +60,10 @@ Widget WidgetTabs() {
              color: Colors.black,
              child: WidgetCard()
             ),
-            Container(
-              child: Center(
-                child: Text(
-                  "Updates",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 15),
-                ),
-              ),
-            ),
+           Container(
+               color: Colors.black,
+               child: WidgetCard1()
+           ),
            Container(
              child: Center(
                child: Text(
